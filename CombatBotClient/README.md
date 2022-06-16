@@ -4,8 +4,8 @@ Setup with useful VSC, Git configuration and libraries.
 
 To start:
 ```
-    ProjectRoot>python -m venv .
-    ProjectRoot>.\Scipts\activate
+    ProjectRoot>python(3*) -m venv .
+    ProjectRoot>.\Scipts(or bin)\activate
     ProjectRoot>pip install -r requirements.txt
 ```
 
@@ -31,4 +31,11 @@ Remember when revisiting after the IDE or terminal has been restarted, restart t
 When the env is active you should see the project name before the directory in ther terminal;
 ```
     (ProjectName) ProjectName>
+```
+
+In VSCode, `cntrl or command + shift + p` to open the command window and type `Python: Select interpreter`,
+set the interpreter to:
+
+```
+    (ProjectRoot)/Scripts(or bin)/Python3
 ```

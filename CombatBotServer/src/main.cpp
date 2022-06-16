@@ -24,11 +24,23 @@ int servoPinList[8]{
 Preferences preferences;
 
 void MainLoop(WiFiClient server);
+void SetupPrefs();
 
 void setup() 
 {
 	Serial.begin(115200);
 	SetupServos(servoPinList, servoList);
+	SetupPrefs();
+}
+
+void SetupPrefs()
+{
+	preferences.begin("bot-app", false);
+	String ssid = preferences.getString("SSID", "");
+	String pswd = preferences.getString("PSWD", "");
+	if (ssid == "") preferences.putString("SSID", " ");
+	if (pswd == "") preferences.putString("PSWD", " ");
+	preferences.end();
 }
 
 void loop() 
